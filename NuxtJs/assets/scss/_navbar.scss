@@ -1,0 +1,244 @@
+%flex-layout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.navbar {
+    @extend %flex-layout;
+    padding: 13px 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: #FFF;
+    border-bottom: 1px solid #E6E6E6;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+
+        .left-section {
+            align-items: center;
+            gap: 30px;
+            display: flex;
+
+            .Karo-logo {
+                display: flex;
+                align-items: center;
+                gap: 9.778px;
+
+                .logo-title {
+                    color: #000;
+                    text-align: center;
+                    font-family: Be Vietnam Pro;
+                    font-size: 29.333px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: -0.611px;
+                }
+            }
+
+            .seperate-line {
+                width: 1px;
+                height: 30px;
+                background: var(--border-light-grey, #EEE);
+            }
+
+            .nav-info {
+                display: flex;
+                align-items: flex-start;
+                gap: 40px;
+                color: black;
+                font-weight: 500;
+                line-height: 50px;
+
+                .font-plus-jakarta {
+                    border: 1px solid white;
+                    font-weight: 500;
+                    font-size: 16px;
+                    outline: white;
+                }
+            }
+
+            .search {
+                display: flex;
+                width: 316px;
+                padding: 15px 14px;
+                align-items: center;
+                gap: 10px;
+                border-radius: 10px;
+                background: var(--background-grey, #F8F8F8);
+                justify-content: left;
+
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    top: 35%;
+                    left: 215px;
+                    background-color: #f9f9f9;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    z-index: 1;
+                }
+            }
+        }
+
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            .info {
+                display: flex;
+                align-items: flex-start;
+                gap: 47px;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 50px;
+
+                a {
+                    color: var(--text-grey, #666);
+                    text-align: center;
+
+                    /* 312.5% */
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+
+            .login-register {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+
+                .btn {
+                    padding: 10px 30px;
+                }
+
+                .seperate-line {
+                    width: 1px;
+                    height: 36px;
+                    background: #EEE;
+                }
+
+                svg {
+                    cursor: pointer;
+                }
+
+                .u-login-info {
+                    display: flex;
+                    height: 50px;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+
+                    img {
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 100px;
+                        border: 1px solid rgba(17, 17, 17, 0.10);
+                        background: lightgray 50% / cover no-repeat;
+                        object-fit: cover
+                    }
+
+                    .u-login-container {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        align-self: stretch;
+                        color: var(--color-navy, #3D4C68);
+                        font-size: 13px;
+                        font-weight: 500;
+                        line-height: 128%;
+                        /* 16.64px */
+                    }
+
+                }
+            }
+
+            .function-container {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                .btn-post {
+                    display: flex;
+                    padding: 10px 30px;
+                    gap: 10px;
+                    border-radius: 8px;
+                    background: #EC1F25;
+                    color: #FFF;
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 125%;
+                    /* 20px */
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+
+                .btn-notify {
+                    display: flex;
+                    width: 40px;
+                    height: 40px;
+                    padding: 0px 1px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 8px;
+                    border: 1.5px solid var(--bg-light-blue, #F5F9FF);
+                    background: var(--bg-light-blue, #F5F9FF);
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+
+                .btn_user-info {
+                    display: flex;
+                    padding: 8px 10px;
+                    align-items: center;
+                    gap: 14px;
+                    border-radius: 8px;
+                    border: 1.5px solid var(--border-blue, #E6F0FF);
+                    &:hover{
+                        opacity: 0.8;
+                    }
+
+                    .img-content {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        object-fit: cover
+                    }
+
+                    .user-name {
+                        color: var(--blue-darkest, #03102A);
+                        font-size: 15px;
+                        font-weight: 500;
+                        line-height: 145%;
+                        /* 21.75px */
+                    }
+                }
+            }
+        }
+    }
+}
+
+@each $key,
+$val in $colors {
+    .navbar-#{$key} {
+        @extend .navbar;
+        background-color: $val;
+    }
+}

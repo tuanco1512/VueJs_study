@@ -1,0 +1,81 @@
+.font-plus-jakarta {
+    font-family: Plus Jakarta Sans;
+}
+
+.font-big-red {
+    color: #B6020F;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 145%;
+    /* 24.65px */
+}
+
+.font-orange {
+    color: #FF5358;
+}
+
+.font-red {
+    color: #B6020F;
+}
+
+.font-basic {
+    color: #333;
+}
+
+.font-black {
+    color: var(--color-black, #111);
+}
+
+.font-white {
+    color: var(--color-white, #FFF);
+}
+
+.font-light-grey {
+    color: var(--text-light-grey, #999);
+}
+
+.font-grey {
+    color: #666;
+}
+
+.font-blue {
+    color: #002F7A;
+}
+
+.font-light-dark-blue {
+    color: #3D4C68;
+}
+
+.font-green {
+    color: #4ACC0D;
+}
+
+.font-xxl {
+    font-size: 24px;
+}
+
+.font-xl {
+    font-size: 19px;
+}
+
+.font-reg-sm {
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.3px;
+}
+
+.link-active {
+    color: #FF5358;
+}
+
+.link-arrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.red-link {
+    color: #FF5358;
+}
