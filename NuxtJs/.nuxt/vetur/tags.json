@@ -1,5 +1,5 @@
 {
-  "Header": {
-    "description": "Auto imported from components/Header.vue"
+  "DesktopHeader": {
+    "description": "Auto imported from components/desktop/Header.vue"
   }
 }

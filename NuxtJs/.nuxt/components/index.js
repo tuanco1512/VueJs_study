@@ -1,4 +1,4 @@
-export { default as Header } from '../..\\components\\Header.vue'
+export { default as DesktopHeader } from '../..\\components\\desktop\\Header.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

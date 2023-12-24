@@ -8,11 +8,9 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '..\\assets\\css\\style.css'
 
-import '..\\assets\\css\\main.css'
-
 import '..\\assets\\css\\reset.css'
 
-import '..\\assets\\css\\fonts.css'
+import '..\\assets\\fonts\\font.css'
 
 import _6f6c098b from './layouts/default.vue'
 

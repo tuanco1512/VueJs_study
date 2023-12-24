@@ -1,6 +1,5 @@
 <template>
     <div class="font-plus-jakarta">
-      <Header class="header" />
       <div>
         {{ textDefault }}
       </div>
