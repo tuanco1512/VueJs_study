@@ -42,54 +42,115 @@
           <span>Karo</span>
         </div>
         <div class="header-line"></div>
-        <div>Trang chủ</div>
-        <div class="menu-item" @click.prevent="ShowDropdown(1)">
-          Mua nhà
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="8"
-              viewBox="0 0 12 8"
-              fill="none"
-            >
-              <path
-                d="M1.6665 1.66663L6.33317 6.33329L10.9998 1.66663"
-                stroke="#000929"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </span>
-          <div v-if="isShow(1)" class="dropdown-menu">
-            <div>1</div>
-            <div>2</div>
+        <div class="menu-items-list">
+          <div class="font-menu-items">Trang chủ</div>
+          <div
+            class="menu-item font-menu-items"
+            @click.prevent="ShowDropdown(1)"
+          >
+            Mua nhà
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="8"
+                viewBox="0 0 12 8"
+                fill="none"
+              >
+                <path
+                  d="M1.6665 1.66663L6.33317 6.33329L10.9998 1.66663"
+                  stroke="#000929"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <div v-if="isShow(1)" class="dropdown-menu">
+              <div>1</div>
+              <div>2</div>
+            </div>
           </div>
+          <div
+            class="menu-item font-menu-items"
+            @click.prevent="ShowDropdown(2)"
+          >
+            Thuê nhà
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="8"
+                viewBox="0 0 12 8"
+                fill="none"
+              >
+                <path
+                  d="M1.6665 1.66663L6.33317 6.33329L10.9998 1.66663"
+                  stroke="#000929"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <div v-if="isShow(2)" class="dropdown-menu">
+              <div>1</div>
+              <div>2</div>
+            </div>
+          </div>
+          <div class="font-menu-items">Giới thiệu</div>
         </div>
-        <div class="menu-item" @click.prevent="ShowDropdown(2)">
-          Thuê nhà
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="8"
-              viewBox="0 0 12 8"
-              fill="none"
-            >
+      </div>
+      <div v-if="!login" class="header-desktop-right-column">
+        <div class="deposit-btn">Ký gửi nhà</div>
+        <div class="login-btn">Đăng nhập</div>
+      </div>
+      <div v-else class="header-desktop-right-column">
+        <div class="manage-btn">Quản lý</div>
+        <div class="notify-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="24"
+            viewBox="0 0 25 24"
+            fill="none"
+          >
+            <g clip-path="url(#clip0_3362_13710)">
               <path
-                d="M1.6665 1.66663L6.33317 6.33329L10.9998 1.66663"
-                stroke="#000929"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                d="M21.3679 16.4943C20.8115 15.5366 20.1482 13.7192 20.1482 10.5V9.83469C20.1482 5.68296 16.8176 2.28058 12.7236 2.25019C12.7045 2.25009 12.6855 2.25 12.6664 2.25C10.6798 2.25258 8.77563 3.0442 7.37273 4.45072C5.96982 5.85723 5.18309 7.76344 5.1856 9.75V10.5C5.1856 13.719 4.52193 15.5363 3.96529 16.494C3.83233 16.7217 3.76178 16.9805 3.76075 17.2443C3.75972 17.508 3.82825 17.7673 3.95943 17.9961C4.09061 18.2249 4.27979 18.4151 4.50791 18.5475C4.73603 18.6798 4.99502 18.7497 5.25875 18.75H8.91656C8.91656 19.7446 9.31165 20.6984 10.0149 21.4017C10.7182 22.1049 11.672 22.5 12.6666 22.5C13.6611 22.5 14.6149 22.1049 15.3182 21.4017C16.0215 20.6984 16.4166 19.7446 16.4166 18.75H20.0744C20.3381 18.7497 20.597 18.6798 20.8251 18.5475C21.0532 18.4152 21.2424 18.2251 21.3735 17.9963C21.5047 17.7675 21.5733 17.5083 21.5723 17.2446C21.5713 16.9809 21.5008 16.7221 21.3679 16.4943ZM12.6666 21C12.07 20.9993 11.4981 20.7621 11.0763 20.3402C10.6545 19.9184 10.4172 19.3465 10.4166 18.75H14.9166C14.9159 19.3465 14.6786 19.9184 14.2568 20.3402C13.835 20.7621 13.2631 20.9993 12.6666 21Z"
+                fill="#000929"
               />
-            </svg>
-          </span>
-          <div v-if="isShow(2)" class="dropdown-menu">
-            <div>1</div>
-            <div>2</div>
-          </div>
+            </g>
+            <defs>
+              <clipPath id="clip0_3362_13710">
+                <rect
+                  width="24"
+                  height="24"
+                  fill="white"
+                  transform="translate(0.666504)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="user-info">
+          <img src="../../assets/img/Rectangle 111.png" alt="" />
+          <span>Manh</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="8"
+            viewBox="0 0 12 8"
+            fill="none"
+          >
+            <path
+              d="M1.6665 1.66663L6.33317 6.33329L10.9998 1.66663"
+              stroke="#000929"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
       </div>
     </div>
@@ -100,6 +161,7 @@ export default {
   data() {
     return {
       activeDropdown: null,
+      login: false,
     };
   },
 
