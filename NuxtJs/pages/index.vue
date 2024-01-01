@@ -1,17 +1,26 @@
 <template>
     <div class="font-plus-jakarta">
-      <div>
-        {{ textDefault }}
+    <HeaderDesktop :data-menu = "dataMenu" :quick-view = "quickView" @event-choose-menu="nhanData"/>
+
+      <div>{{itemMenu.name}}</div>
+
+      <div class="container">
+        <div class="form">
+          <InputForm/>
+        </div>
       </div>
-      <div @click.prevent="changeText">changeText</div>
-      <div v-if="isShow">
-        <div :class="{ show: a < b }">ASDASdasdasd</div>
-      </div>
-      <p @click.prevent="showText">click show/hide noi dung</p>
     </div>
 </template>
 <script>
+import HeaderDesktop from "~/components/desktop/Header.vue";
+import InputForm from "~/components/desktop/inputForm.vue";
+
+
 export default {
+  components: {
+    HeaderDesktop,
+    InputForm,
+  },
   data() {
     return {
       isShow: true,
@@ -21,8 +30,25 @@ export default {
       textDefault: "noi dung mac dinh asdasdasdas",
       a: 5,
       b: 10,
+      dataMenu:[
+        {
+          id : 1,
+          name: "Can Ban",
+        },
+        {
+          id : 2,
+          name: "Can Mua",
+        },
+        {
+          id : 3,
+          name: "Cho Thue",
+        }
+      ],
+    itemMenu: {},
+    quickView: true,
     };
   },
+
   mounted() {
     this.textDefault = "";
   },
@@ -33,6 +59,9 @@ export default {
     showText() {
       this.isShow = !this.isShow;
     },
+    nhanData(data){
+      this.itemMenu = data;
+    }
   },
 };
 </script>

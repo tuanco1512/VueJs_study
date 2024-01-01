@@ -67,8 +67,11 @@
               </svg>
             </span>
             <div v-if="isShow(1)" class="dropdown-menu">
-              <div>1</div>
-              <div>2</div>
+              <div v-for="(menuItem, index) in dataMenu" :key="index">
+                <div @click.prevent="chooseMenu(menuItem)">
+                  {{ menuItem.name }}
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -134,7 +137,7 @@
           </svg>
         </div>
         <div class="user-info">
-          <img src="../../assets/img/Rectangle 111.png" alt="" />
+          <img src="../../static/img/Rectangle 111.png" alt="" />
           <span>Manh</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -161,17 +164,33 @@ export default {
   data() {
     return {
       activeDropdown: null,
-      login: false,
+      login: true,
     };
   },
 
+  props: {
+    dataMenu: {
+      type: [],
+    },
+    quickView: {
+      type: Boolean,
+    }
+  },
+
   methods: {
-    ShowDropdown(index) {
-      this.activeDropdown = this.activeDropdown === index ? null : index;
+    ShowDropdown(dropdownItem) {
+      this.activeDropdown =
+        this.activeDropdown === dropdownItem ? null : dropdownItem;
     },
 
-    isShow(index) {
-      return this.activeDropdown === index;
+    isShow(dropdownItem) {
+      return this.activeDropdown === dropdownItem;
+    },
+
+    chooseMenu(menuItem) {
+      if (this.quickView) {
+        this.$emit("event-choose-menu", menuItem);
+      }
     },
   },
 };
