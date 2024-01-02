@@ -97,8 +97,11 @@
               </svg>
             </span>
             <div v-if="isShow(2)" class="dropdown-menu">
-              <div>1</div>
-              <div>2</div>
+              <div v-for="(menuItem, index) in dataMenu" :key="index">
+                <div @click.prevent="chooseMenu(menuItem)">
+                  {{ menuItem.name }}
+                </div>
+              </div>
             </div>
           </div>
           <div class="font-menu-items">Giới thiệu</div>
