@@ -1,15 +1,12 @@
 <template>
-    <div>
-      <HeaderDesktop />
-      <div>
-        {{ textDefault }}
-      </div>
-      <div @click.prevent="changeText">changeText</div>
-      <div v-if="isShow">
-        <div :class="{ show: a < b }">ASDASdasdasd</div>
-      </div>
-      <p @click.prevent="showText">click show/hide noi dung</p>
-    </div>
+  <div>
+    <HeaderDesktop
+      :data-menu="dataMenu"
+      :quick-view="quickView"
+      @event-choose-menu="nhanData"
+    />
+    <div>{{itemMenu.id}}</div>
+  </div>
 </template>
 <script>
 import HeaderDesktop from "~/components/desktop/Header.vue";
@@ -27,6 +24,22 @@ export default {
       textDefault: "noi dung mac dinh asdasdasdas",
       a: 5,
       b: 10,
+      dataMenu: [
+        {
+          id: 1,
+          name: "Can ban",
+        },
+        {
+          id: 2,
+          name: "Can mua",
+        },
+        {
+          id: 3,
+          name: "Cho thue",
+        },
+      ],
+      itemMenu: {},
+      quickView: true,
     };
   },
   mounted() {
@@ -38,6 +51,9 @@ export default {
     },
     showText() {
       this.isShow = !this.isShow;
+    },
+    nhanData(data) {
+      this.itemMenu = data;
     },
   },
 };

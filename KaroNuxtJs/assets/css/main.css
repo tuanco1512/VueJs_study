@@ -76,7 +76,7 @@ body {
 }
 .desktop-header-block .header-desktop .header-desktop-left-column .menu-items-list .menu-item .dropdown-menu {
   position: absolute;
-  top: 0px;
+  top: 45px;
   background: #fff;
 }
 .desktop-header-block .header-desktop .header-desktop-left-column .menu-items-list .font-menu-items {

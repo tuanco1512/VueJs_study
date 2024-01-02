@@ -44,7 +44,10 @@
         <div class="header-line"></div>
         <div class="menu-items-list">
           <div class="font-menu-items">Trang chủ</div>
-          <div class="menu-item font-menu-items" @click.prevent="ShowDropdown(1)">
+          <div
+            class="menu-item font-menu-items"
+            @click.prevent="ShowDropdown(1)"
+          >
             Mua nhà
             <span>
               <svg
@@ -64,11 +67,17 @@
               </svg>
             </span>
             <div v-if="isShow(1)" class="dropdown-menu">
-              <div>1</div>
-              <div>2</div>
+              <div v-for="(menuItem, index) in dataMenu" :key="index">
+                <div @click.prevent="chooseMenu(menuItem)">
+                  {{ menuItem.name }}
+                </div>
+              </div>
             </div>
           </div>
-          <div class="menu-item font-menu-items" @click.prevent="ShowDropdown(2)">
+          <div
+            class="menu-item font-menu-items"
+            @click.prevent="ShowDropdown(2)"
+          >
             Thuê nhà
             <span>
               <svg
@@ -159,6 +168,15 @@ export default {
     };
   },
 
+  props: {
+    dataMenu: {
+      type: [],
+    },
+    quickView: {
+      type: Boolean,
+    },
+  },
+
   methods: {
     ShowDropdown(index) {
       this.activeDropdown = this.activeDropdown === index ? null : index;
@@ -166,6 +184,11 @@ export default {
 
     isShow(index) {
       return this.activeDropdown === index;
+    },
+    chooseMenu(menuItem) {
+      if (this.quickView) {
+        this.$emit("event-choose-menu", menuItem);
+      }
     },
   },
 };
