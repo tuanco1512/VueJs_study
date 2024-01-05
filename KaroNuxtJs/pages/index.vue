@@ -5,7 +5,7 @@
       :quick-view="quickView"
       @event-choose-menu="nhanData"
     />
-    <div>{{itemMenu.id}}</div>
+    <div>{{itemMenu.name}}</div>
   </div>
 </template>
 <script>
