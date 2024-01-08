@@ -2,22 +2,22 @@
   {
     "name": "auth-login",
     "path": "/auth/login",
-    "component": "E:\\\\lap trinh\\\\sourcetree\\\\VueJs\\\\NuxtJs\\\\pages\\\\auth\\\\login\\\\index.vue",
+    "component": "D:\\\\SourceTree\\\\VueJs_Study\\\\NuxtJs\\\\pages\\\\auth\\\\login\\\\index.vue",
     "chunkName": "pages/auth/login/index",
-    "_name": "_617a2d00"
+    "_name": "_cfcf59e6"
   },
   {
     "name": "auth-register",
     "path": "/auth/register",
-    "component": "E:\\\\lap trinh\\\\sourcetree\\\\VueJs\\\\NuxtJs\\\\pages\\\\auth\\\\register\\\\index.vue",
+    "component": "D:\\\\SourceTree\\\\VueJs_Study\\\\NuxtJs\\\\pages\\\\auth\\\\register\\\\index.vue",
     "chunkName": "pages/auth/register/index",
-    "_name": "_29632e68"
+    "_name": "_64693dbb"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "E:\\\\lap trinh\\\\sourcetree\\\\VueJs\\\\NuxtJs\\\\pages\\\\index.vue",
+    "component": "D:\\\\SourceTree\\\\VueJs_Study\\\\NuxtJs\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_ddaf42da"
+    "_name": "_60351834"
   }
 ]
