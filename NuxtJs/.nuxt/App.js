@@ -6,11 +6,11 @@ import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '..\\assets\\css\\style.css'
+import '../assets/css/style.css'
 
-import '..\\assets\\css\\reset.css'
+import '../assets/css/reset.css'
 
-import '..\\assets\\fonts\\font.css'
+import '../assets/fonts/font.css'
 
 import _6f6c098b from './layouts/default.vue'
 

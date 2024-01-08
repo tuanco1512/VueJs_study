@@ -4,9 +4,16 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+<<<<<<< HEAD
 const _cfcf59e6 = () => interopDefault(import('..\\pages\\auth\\login\\index.vue' /* webpackChunkName: "pages/auth/login/index" */))
 const _64693dbb = () => interopDefault(import('..\\pages\\auth\\register\\index.vue' /* webpackChunkName: "pages/auth/register/index" */))
 const _60351834 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+=======
+const _e069ebb8 = () => interopDefault(import('../pages/auth/login/index.vue' /* webpackChunkName: "pages/auth/login/index" */))
+const _73de571e = () => interopDefault(import('../pages/auth/register/index.vue' /* webpackChunkName: "pages/auth/register/index" */))
+const _35cfcf83 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _596073ca = () => interopDefault(import('../pages/detail/_id.vue' /* webpackChunkName: "pages/detail/_id" */))
+>>>>>>> CallAPI
 
 const emptyFn = () => {}
 
@@ -21,6 +28,7 @@ export const routerOptions = {
 
   routes: [{
     path: "/auth/login",
+<<<<<<< HEAD
     component: _cfcf59e6,
     name: "auth-login"
   }, {
@@ -30,7 +38,22 @@ export const routerOptions = {
   }, {
     path: "/",
     component: _60351834,
+=======
+    component: _e069ebb8,
+    name: "auth-login"
+  }, {
+    path: "/auth/register",
+    component: _73de571e,
+    name: "auth-register"
+  }, {
+    path: "/",
+    component: _35cfcf83,
+>>>>>>> CallAPI
     name: "index"
+  }, {
+    path: "/detail/:id?",
+    component: _596073ca,
+    name: "detail-id"
   }],
 
   fallback: false
