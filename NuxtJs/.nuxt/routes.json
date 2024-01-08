@@ -2,22 +2,29 @@
   {
     "name": "auth-login",
     "path": "/auth/login",
-    "component": "E:\\\\lap trinh\\\\sourcetree\\\\VueJs\\\\NuxtJs\\\\pages\\\\auth\\\\login\\\\index.vue",
+    "component": "/Users/vutuan/Lab/VueJs_study/Tuan/NuxtJs/pages/auth/login/index.vue",
     "chunkName": "pages/auth/login/index",
-    "_name": "_617a2d00"
+    "_name": "_e069ebb8"
   },
   {
     "name": "auth-register",
     "path": "/auth/register",
-    "component": "E:\\\\lap trinh\\\\sourcetree\\\\VueJs\\\\NuxtJs\\\\pages\\\\auth\\\\register\\\\index.vue",
+    "component": "/Users/vutuan/Lab/VueJs_study/Tuan/NuxtJs/pages/auth/register/index.vue",
     "chunkName": "pages/auth/register/index",
-    "_name": "_29632e68"
+    "_name": "_73de571e"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "E:\\\\lap trinh\\\\sourcetree\\\\VueJs\\\\NuxtJs\\\\pages\\\\index.vue",
+    "component": "/Users/vutuan/Lab/VueJs_study/Tuan/NuxtJs/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_ddaf42da"
+    "_name": "_35cfcf83"
+  },
+  {
+    "name": "detail-id",
+    "path": "/detail/:id?",
+    "component": "/Users/vutuan/Lab/VueJs_study/Tuan/NuxtJs/pages/detail/_id.vue",
+    "chunkName": "pages/detail/_id",
+    "_name": "_596073ca"
   }
 ]
