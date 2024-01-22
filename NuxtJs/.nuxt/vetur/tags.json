@@ -1,4 +1,7 @@
 {
+  "DesktopCard": {
+    "description": "Auto imported from components/desktop/Card.vue"
+  },
   "DesktopHeader": {
     "description": "Auto imported from components/desktop/Header.vue"
   },

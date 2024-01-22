@@ -6,5 +6,6 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
+- `<DesktopCard>` | `<desktop-card>` (components/desktop/Card.vue)
 - `<DesktopHeader>` | `<desktop-header>` (components/desktop/Header.vue)
 - `<DesktopInputForm>` | `<desktop-input-form>` (components/desktop/inputForm.vue)

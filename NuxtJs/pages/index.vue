@@ -1,25 +1,27 @@
 <template>
     <div class="font-plus-jakarta">
-    <HeaderDesktop :data-menu = "dataMenu" :quick-view = "quickView" @event-choose-menu="nhanData"/>
+      <div>sdsads</div>
 
       <div>{{itemMenu.name}}</div>
 
       <div class="container">
         <div class="form">
-          <InputForm/>
+          <div v-for="(item,index) in consignmentArray" :key="index">
+            <Card :item="item" />
+          </div>
         </div>
       </div>
     </div>
 </template>
 <script>
-import HeaderDesktop from "~/components/desktop/Header.vue";
-import InputForm from "~/components/desktop/inputForm.vue";
+
+import Card from "~/components/desktop/Card.vue";
 
 
 export default {
+ layout: 'custom',
   components: {
-    HeaderDesktop,
-    InputForm,
+    Card,
   },
   data() {
     return {
@@ -46,11 +48,15 @@ export default {
       ],
     itemMenu: {},
     quickView: true,
+    page:1,
+    consignmentArray:[]
     };
   },
 
   mounted() {
+
     this.textDefault = "";
+    this.handleApiConsignment()
   },
   methods: {
     changeText() {
@@ -61,7 +67,18 @@ export default {
     },
     nhanData(data){
       this.itemMenu = data;
-    }
+    },
+
+    async handleApiConsignment() {
+     try {
+        const repo = await this.$axios.get(`/get-consignment-list?page=${this.page}`)
+        this.consignmentArray = repo.data.filterResult.data
+
+     } catch (error) {
+        console.log(error)
+     }
+    },
+
   },
 };
 </script>

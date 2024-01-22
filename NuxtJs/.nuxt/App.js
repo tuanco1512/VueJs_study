@@ -12,9 +12,11 @@ import '../assets/css/reset.css'
 
 import '../assets/fonts/font.css'
 
+import _6e25c6e7 from '../layouts/custom.vue'
+import _779ce2d7 from '../layouts/kygui.vue'
 import _6f6c098b from './layouts/default.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_custom": sanitizeComponent(_6e25c6e7),"_kygui": sanitizeComponent(_779ce2d7),"_default": sanitizeComponent(_6f6c098b) }
 
 export default {
   render (h, props) {

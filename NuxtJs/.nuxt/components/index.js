@@ -1,3 +1,4 @@
+export { default as DesktopCard } from '../../components/desktop/Card.vue'
 export { default as DesktopHeader } from '../../components/desktop/Header.vue'
 export { default as DesktopInputForm } from '../../components/desktop/inputForm.vue'
 
