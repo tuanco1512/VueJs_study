@@ -141,7 +141,8 @@
         </div>
         <div class="user-info">
           <img src="../../static/img/Rectangle 111.png" alt="" />
-          <span>Manh</span>
+          <span v-if="$auth.user">{{ $auth.user.fullname }}</span>
+          <span v-else>Manh</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="12"
@@ -158,6 +159,7 @@
             />
           </svg>
         </div>
+        <div @click.prevent="logout">logout</div>
       </div>
     </div>
   </div>
@@ -180,6 +182,10 @@ export default {
     }
   },
 
+  mounted() {
+    console.log(this.$auth.strategy.token.get())
+  },
+
   methods: {
     ShowDropdown(dropdownItem) {
       this.activeDropdown =
@@ -195,6 +201,15 @@ export default {
         this.$emit("event-choose-menu", menuItem);
       }
     },
+    async logout() {
+      try {
+        await this.$auth.logout()
+        window.location.href = '/'
+      } catch (error) {
+        console.error('Error checking login status:', error)
+      }
+    },
+
   },
 };
 </script>
