@@ -37,12 +37,47 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/auth-next',
   ],
+
+
+  auth: {
+    // Strategy bạn muốn sử dụng (ở đây là local strategy)
+    strategies: {
+      local: {
+        // Tên của strategy
+        scheme: "local",
+        // Các tùy chọn cho local strategy
+        token: {
+          property: "token",
+          required: true,
+          type: "Bearer",
+        },
+        user: {
+          property: "data",
+          autoFetch: true,
+        },
+        endpoints: {
+          // Các API endpoints liên quan đến đăng nhập và lấy thông tin người dùng
+          login: { url: "/login", method: "post" },
+          user: { url: "/user", method: "get" },
+          logout: { url: "/logout", method: "get" },
+        },
+      },
+    },
+    // Các cài đặt chung cho Auth Module
+    redirect: {
+      login: "/auth/login",
+      logout: "/",
+      home: "/",
+    },
+  },
+
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: 'https://api-test.karo.land/api',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

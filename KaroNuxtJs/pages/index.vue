@@ -1,19 +1,45 @@
 <template>
-  <div>
-    <HeaderDesktop
-      :data-menu="dataMenu"
-      :quick-view="quickView"
-      @event-choose-menu="nhanData"
-    />
-    <div>{{itemMenu.name}}</div>
+  <div class="font-plus-jakarta">
+    <div class="intro">
+      <div class="intro-title">
+        <div class="intro-text-button">
+          <h1>
+            Chào mừng bạn <br />
+            đến với Karo
+          </h1>
+          <p>
+            Hệ sinh thái kinh doanh bất động sản ứng dụng <br />
+            công nghệ AI đầu tiên ở Việt Nam
+          </p>
+          <div class="function-btns">
+            <nuxt-link class="default-btn" id="ky-gui-btn" :to="`/`"
+              >Ký gửi nhà</nuxt-link
+            >
+            <nuxt-link class="default-btn" :to="`/`">Tìm hiểu thêm</nuxt-link>
+          </div>
+        </div>
+        <div class="intro-img">
+          <img src="../assets/img/Illustration 4.png" alt="" />
+        </div>
+      </div>
+      <HouseFilter :data-menu="dataMenu" :quick-view="quickView" />
+    </div>
+    <div class="card-section success">
+      <div v-for="(item, index) in consignmentArray" :key="index">
+        <Card :item="item" />
+      </div>
+    </div>
   </div>
 </template>
 <script>
-import HeaderDesktop from "~/components/desktop/Header.vue";
+import HouseFilter from "~/components/desktop/HouseFilter.vue";
+import Card from "~/components/desktop/Card.vue";
 
 export default {
+  layout: "",
   components: {
-    HeaderDesktop,
+    HouseFilter,
+    Card,
   },
   data() {
     return {
@@ -37,13 +63,20 @@ export default {
           id: 3,
           name: "Cho thue",
         },
+        {
+          id: 4,
+          name: "Tất cả",
+        },
       ],
       itemMenu: {},
       quickView: true,
+      page: 1,
+      consignmentArray: [],
     };
   },
   mounted() {
     this.textDefault = "";
+    this.handleApiConsignment();
   },
   methods: {
     changeText() {
@@ -54,6 +87,18 @@ export default {
     },
     nhanData(data) {
       this.itemMenu = data;
+    },
+
+    async handleApiConsignment() {
+      try {
+        const repo = await this.$axios.get(
+          `/get-consignment-list?page=${this.page}`
+        );
+        console.log(repo);
+        this.consignmentArray = repo.data.filterResult.data;
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };

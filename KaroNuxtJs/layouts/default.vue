@@ -1,12 +1,13 @@
 <template>
   <div>
-    <HeaderDesktop :data-menu="dataMenu" />
+    <HeaderDesktop :data-menu="dataMenu" :quick-view="quickView" />
     <Nuxt />
     <div>footer</div>
   </div>
 </template>
 <script>
 import HeaderDesktop from "~/components/desktop/Header.vue";
+
 export default {
   components: {
     HeaderDesktop,

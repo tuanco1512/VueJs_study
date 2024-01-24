@@ -2,25 +2,29 @@
   {
     "name": "auth-login",
     "path": "/auth/login",
-    "component": "/Users/vutuan/Lab/VueJs_study/Tuan/NuxtJs/pages/auth/login/index.vue",
-    "chunkName": "pages/auth/login/index"
+    "component": "E:\\\\lap trinh\\\\github\\\\github\\\\VueJs_study\\\\NuxtJs\\\\pages\\\\auth\\\\login\\\\index.vue",
+    "chunkName": "pages/auth/login/index",
+    "_name": "_6b596943"
   },
   {
     "name": "auth-register",
     "path": "/auth/register",
-    "component": "/Users/vutuan/Lab/VueJs_study/Tuan/NuxtJs/pages/auth/register/index.vue",
-    "chunkName": "pages/auth/register/index"
+    "component": "E:\\\\lap trinh\\\\github\\\\github\\\\VueJs_study\\\\NuxtJs\\\\pages\\\\auth\\\\register\\\\index.vue",
+    "chunkName": "pages/auth/register/index",
+    "_name": "_47a0f3c5"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/vutuan/Lab/VueJs_study/Tuan/NuxtJs/pages/index.vue",
-    "chunkName": "pages/index"
+    "component": "E:\\\\lap trinh\\\\github\\\\github\\\\VueJs_study\\\\NuxtJs\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_48630420"
   },
   {
     "name": "detail-id",
     "path": "/detail/:id?",
-    "component": "/Users/vutuan/Lab/VueJs_study/Tuan/NuxtJs/pages/detail/_id.vue",
-    "chunkName": "pages/detail/_id"
+    "component": "E:\\\\lap trinh\\\\github\\\\github\\\\VueJs_study\\\\NuxtJs\\\\pages\\\\detail\\\\_id.vue",
+    "chunkName": "pages/detail/_id",
+    "_name": "_1b3a8da7"
   }
 ]

@@ -24,8 +24,22 @@ body {
     background: #fff;
 }
 
+.font-plus-jakarta{
+  font-family: 'Plus Jakarta Sans';
+}
+
+.font-white{
+  color: white
+}
+
+.font-green{
+  color: #19AF00;
+}
+
 /* all style */
 
 /* Header */
 @import 'header';
+@import 'index';
+@import 'components';
 /* Header */

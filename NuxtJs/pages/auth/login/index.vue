@@ -1,6 +1,5 @@
 <template>
   <div>
-    <HeaderDesktop />
     <div>
       <form @submit.prevent="submitForm"
       ref="infoUser"
@@ -40,6 +39,7 @@
 import HeaderDesktop from "~/components/desktop/Header.vue";
 
 export default {
+  layout:'custom',
   components: {
     HeaderDesktop,
   },

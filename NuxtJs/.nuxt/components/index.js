@@ -1,6 +1,6 @@
-export { default as DesktopCard } from '../../components/desktop/Card.vue'
-export { default as DesktopHeader } from '../../components/desktop/Header.vue'
-export { default as DesktopInputForm } from '../../components/desktop/inputForm.vue'
+export { default as DesktopCard } from '../..\\components\\desktop\\Card.vue'
+export { default as DesktopHeader } from '../..\\components\\desktop\\Header.vue'
+export { default as DesktopInputForm } from '../..\\components\\desktop\\inputForm.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

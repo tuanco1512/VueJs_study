@@ -68,7 +68,10 @@
             </span>
             <div v-if="isShow(1)" class="dropdown-menu">
               <div v-for="(menuItem, index) in dataMenu" :key="index">
-                <div @click.prevent="chooseMenu(menuItem)">
+                <div
+                  class="dropdown-menu-item"
+                  @click.prevent="chooseMenu(menuItem)"
+                >
                   {{ menuItem.name }}
                 </div>
               </div>
@@ -97,8 +100,14 @@
               </svg>
             </span>
             <div v-if="isShow(2)" class="dropdown-menu">
-              <div>1</div>
-              <div>2</div>
+              <div v-for="(menuItem, index) in dataMenu" :key="index">
+                <div
+                  class="dropdown-menu-item"
+                  @click.prevent="chooseMenu(menuItem)"
+                >
+                  {{ menuItem.name }}
+                </div>
+              </div>
             </div>
           </div>
           <div class="font-menu-items">Giới thiệu</div>
@@ -138,7 +147,8 @@
         </div>
         <div class="user-info">
           <img src="../../assets/img/Rectangle 111.png" alt="" />
-          <span>Manh</span>
+          <span v-if="$auth.user">{{ $auth.user.fullname }}</span>
+          <span v-else>Manh</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="12"
@@ -155,6 +165,7 @@
             />
           </svg>
         </div>
+        <div @click.prevent="logout">logout</div>
       </div>
     </div>
   </div>
@@ -164,7 +175,7 @@ export default {
   data() {
     return {
       activeDropdown: null,
-      login: false,
+      login: true,
     };
   },
 
@@ -175,6 +186,10 @@ export default {
     quickView: {
       type: Boolean,
     },
+  },
+
+  mounted() {
+    console.log(this.$auth.strategy.token.get());
   },
 
   methods: {
@@ -188,6 +203,14 @@ export default {
     chooseMenu(menuItem) {
       if (this.quickView) {
         this.$emit("event-choose-menu", menuItem);
+      }
+    },
+    async logout() {
+      try {
+        await this.$auth.logout();
+        window.location.href = "/";
+      } catch (error) {
+        console.error("Error checking login status:", error);
       }
     },
   },

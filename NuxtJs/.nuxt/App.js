@@ -6,14 +6,14 @@ import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '../assets/css/style.css'
+import '..\\assets\\css\\style.css'
 
-import '../assets/css/reset.css'
+import '..\\assets\\css\\reset.css'
 
-import '../assets/fonts/font.css'
+import '..\\assets\\fonts\\font.css'
 
-import _6e25c6e7 from '../layouts/custom.vue'
-import _779ce2d7 from '../layouts/kygui.vue'
+import _6e25c6e7 from '..\\layouts\\custom.vue'
+import _779ce2d7 from '..\\layouts\\kygui.vue'
 import _6f6c098b from './layouts/default.vue'
 
 const layouts = { "_custom": sanitizeComponent(_6e25c6e7),"_kygui": sanitizeComponent(_779ce2d7),"_default": sanitizeComponent(_6f6c098b) }
