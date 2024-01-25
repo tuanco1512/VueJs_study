@@ -63,13 +63,13 @@
       <div class="text-wrapper">
         <div class="text-area">
           <div class="price">
-            <p class="font-red">{{item.price}}</p>
+            <p class="font-red">{{ formatNumber(item.price) }}</p>
           </div>
           <nuxt-link :to="`/detail/${item.id}`" class="font-black">{{
             item.title
           }}</nuxt-link>
           <p class="font-light-grey">
-            {{item.full_address}}
+            {{ item.full_address }}
           </p>
         </div>
         <div class="facilities">
@@ -239,6 +239,19 @@ export default {
   props: {
     item: {
       type: Object,
+    },
+  },
+
+  methods: {
+    formatNumber(number) {
+      const billion = 1000000000;
+
+      if (number >= billion) {
+        const billionValue = number / billion;
+        return `${billionValue.toFixed(2)} Tỷ`;
+      } else {
+        return number.toString();
+      }
     },
   },
 };

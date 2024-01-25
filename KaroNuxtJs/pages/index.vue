@@ -29,6 +29,9 @@
         <Card :item="item" />
       </div>
     </div>
+    <button @click.prevent="handleApiConsignment" v-if="isLoadData">
+      Xem thêm
+    </button>
   </div>
 </template>
 <script>
@@ -72,6 +75,7 @@ export default {
       quickView: true,
       page: 1,
       consignmentArray: [],
+      isLoadData: true,
     };
   },
   mounted() {
@@ -95,7 +99,16 @@ export default {
           `/get-consignment-list?page=${this.page}`
         );
         console.log(repo);
-        this.consignmentArray = repo.data.filterResult.data;
+        // this.consignmentArray = repo.data.filterResult.data;
+        this.consignmentArray = [
+          ...this.consignmentArray,
+          ...repo.data.filterResult.data,
+        ];
+
+        this.page++;
+        if (repo.data.filterResult.data.length === 0) {
+          this.isLoadData = false;
+        }
       } catch (error) {
         console.log(error);
       }

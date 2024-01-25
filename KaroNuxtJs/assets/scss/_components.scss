@@ -95,6 +95,7 @@
           border-radius: 8px;
           border: 1px solid var(--Blue-8th, #C8DDFF);
           background: var(--BG-Light-Red, #FFFDFD);
+          z-index: 1;
 
           input {
             width: 100%;

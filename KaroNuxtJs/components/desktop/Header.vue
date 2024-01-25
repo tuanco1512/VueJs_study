@@ -113,11 +113,7 @@
           <div class="font-menu-items">Giới thiệu</div>
         </div>
       </div>
-      <div v-if="!login" class="header-desktop-right-column">
-        <div class="deposit-btn">Ký gửi nhà</div>
-        <div class="login-btn">Đăng nhập</div>
-      </div>
-      <div v-else class="header-desktop-right-column">
+      <div v-if="$auth.user" class="header-desktop-right-column">
         <div class="manage-btn">Quản lý</div>
         <div class="notify-btn">
           <svg
@@ -145,10 +141,9 @@
             </defs>
           </svg>
         </div>
-        <div class="user-info">
+        <div @click.prevent="ShowDropdown(3)" class="user-info">
           <img src="../../assets/img/Rectangle 111.png" alt="" />
-          <span v-if="$auth.user">{{ $auth.user.fullname }}</span>
-          <span v-else>Manh</span>
+          <span>{{ $auth.user.fullname }}</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="12"
@@ -164,8 +159,12 @@
               stroke-linejoin="round"
             />
           </svg>
+          <div v-if="isShow(3)" @click.prevent="logout" class="user-info-dropdown">logout</div>
         </div>
-        <div @click.prevent="logout">logout</div>
+      </div>
+      <div v-else class="header-desktop-right-column">
+        <div class="deposit-btn">Ký gửi nhà</div>
+        <nuxt-link :to="`/auth/login`" class="login-btn">Đăng nhập</nuxt-link>
       </div>
     </div>
   </div>
