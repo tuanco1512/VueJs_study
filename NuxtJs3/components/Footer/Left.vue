@@ -1,0 +1,3 @@
+<template>
+    left footer
+</template>
