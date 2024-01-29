@@ -1,9 +1,7 @@
 <template>
   <div>
-    <Header />
     <NuxtLink :to="`/detail/${property.id}`">{{ string }}</NuxtLink>
     <button @click.prevent="changeText">thay doi noi dung</button>
-    <Footer />
   </div>
 </template>
 
