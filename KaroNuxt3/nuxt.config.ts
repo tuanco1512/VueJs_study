@@ -9,6 +9,10 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
 
-  // css: ['animate.css','~/assets/css/reset.css','~/assets/fonts/font.css','~/assets/scss/main.scss','vue-final-modal/style.css'],
+  css: [
+    '~/assets/css/reset.css',
+    '~/assets/fonts/font.css',
+    '~/assets/css/main.css',
+  ],
 
 })
