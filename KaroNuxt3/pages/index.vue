@@ -1,7 +1,7 @@
 <template>
   <div>
     <NuxtLink :to="`/detail/${property.id}`">{{ string }}</NuxtLink>
-    <button @click.prevent="changeText">thay đổi nội dung</button>
+    <button @click.prevent="changeText">thay đổi nội dung 1</button>
   </div>
 </template>
 
